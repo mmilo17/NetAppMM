@@ -21,7 +21,7 @@ namespace NetApp.API.Controllers
         }
 
         // GET api/values
-        [HttpGet("{id}")]
+        [HttpGet]
         public async Task<IActionResult> GetValues()
         {
             var values = await _context.Values.ToListAsync();
