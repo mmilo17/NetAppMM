@@ -15,8 +15,12 @@
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
-     
-    namespace NetApp.API
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using NetApp.API.Helpers;
+
+namespace NetApp.API
     {
         public class Startup
         {
@@ -55,7 +59,19 @@
                 }
                 else
                 {
-                    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                    app.UseExceptionHandler(builder => {
+                        builder.Run(async context => {
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            
+                            var error = context.Features.Get<IExceptionHandlerFeature>();
+                            if (error != null)
+                            {
+                                context.Response.AddApplicationError(error.Error.Message);
+                                await context.Response.WriteAsync(error.Error.Message);
+                            }
+                        });
+                    });
+                    
                     //app.UseHsts();
                 }
      
