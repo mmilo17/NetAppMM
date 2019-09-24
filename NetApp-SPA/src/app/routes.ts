@@ -15,7 +15,6 @@ export const appRoutes: Routes = [
             { path: 'friends', component: MemberListComponent},
             { path: 'messages', component: MessagesComponent},
             { path: 'lists', component: ListsComponent},
-            
         ]
     },
     { path: '**', redirectTo: 'home', pathMatch: 'full'}
