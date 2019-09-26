@@ -1,0 +1,82 @@
+[
+    {
+      "Username": "Ava",
+      "Gender": "female",
+      "DateOfBirth": "1960-03-30",
+      "Password": "password",
+      "Created": "2018-12-22",
+      "LastActive": "2018-12-22",
+      "Bio": "Sit nostrud voluptate nisi irure ullamco ea exercitation aute. Eu ex amet reprehenderit laborum cupidatat aliqua exercitation sunt sint elit ad minim ex. Eiusmod dolor fugiat excepteur anim nostrud ex eu occaecat duis esse esse nulla. In ex sit Lorem cupidatat mollit magna nisi. Et et tempor cillum reprehenderit deserunt laborum irure veniam sunt consectetur anim ad.\r\n",
+      "Name": "Ava",
+      "Surname": "McEnna",
+      "City": "Echo",
+      "Country": "Ethiopia",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/2.jpg",
+          "isMain": true,
+          "description": "Ullamco excepteur quis id mollit ad culpa aute excepteur laborum nisi est ipsum nostrud culpa."
+        }
+      ]
+    },
+    {
+      "Username": "Bob",
+      "Gender": "male",
+      "DateOfBirth": "1990-05-19",
+      "Password": "password",
+      "Created": "2018-08-29",
+      "LastActive": "2018-08-29",
+      "Bio": "Pariatur occaecat labore minim velit et nulla non fugiat dolore irure fugiat ea labore. Irure ut eu sunt ullamco pariatur occaecat reprehenderit exercitation sit aliquip quis laboris. Sit eiusmod ex eiusmod non amet commodo mollit adipisicing incididunt esse. Cillum nisi nulla consequat pariatur. Exercitation sint sunt laboris mollit aliquip velit cupidatat nostrud sint magna ullamco incididunt. Enim laborum laboris proident velit exercitation cupidatat elit non duis.\r\n",
+      "Name": "Bob",
+      "Surname": "Masuka",
+      "City": "Cartwright",
+      "Country": "Cocos (Keeling Islands)",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/men/99.jpg",
+          "isMain": true,
+          "description": "Eu duis est id qui do voluptate commodo incididunt dolore magna est aute."
+        }
+      ]
+    },
+    {
+      "Username": "Lisa",
+      "Gender": "female",
+      "DateOfBirth": "1985-05-22",
+      "Password": "password",
+      "Created": "2018-11-03",
+      "LastActive": "2018-11-03",
+      "Bio": "Nostrud irure qui dolore veniam quis velit veniam proident et esse ea non. Laboris nulla nulla quis velit occaecat elit sit do tempor deserunt officia do eiusmod magna. Nulla tempor et nisi laboris aliquip ea irure mollit exercitation proident. Voluptate occaecat nisi sint adipisicing occaecat irure incididunt. Reprehenderit fugiat nulla ex sint sit Lorem. Officia commodo adipisicing id tempor minim tempor. Officia velit sit irure deserunt labore.\r\n",
+      "Name": "Lisa",
+      "Surname": "Green",
+      "City": "Groton",
+      "Country": "Equatorial Guinea",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/16.jpg",
+          "isMain": true,
+          "description": "Laborum quis consectetur ad do tempor reprehenderit ex non ipsum."
+        }
+      ]
+    },
+    {
+      "Username": "Amie",
+      "Gender": "female",
+      "DateOfBirth": "2000-12-17",
+      "Password": "password",
+      "Created": "2017-03-18",
+      "LastActive": "2017-03-18",
+      "Bio": "Deserunt minim officia deserunt deserunt laborum ipsum aliqua duis qui aliquip pariatur dolor laborum qui. Nisi Lorem ea eiusmod velit irure nostrud. Ullamco nostrud et nulla laboris do ea Lorem ad esse commodo duis aliqua et eiusmod. Exercitation id ad eiusmod culpa elit duis incididunt dolore aliqua aliqua eiusmod.\r\n",
+      "Name": "Amie",
+      "Surname": "Lynch",
+      "City": "Durham",
+      "Country": "Japan",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/73.jpg",
+          "isMain": true,
+          "description": "Eiusmod reprehenderit ex quis aute tempor excepteur reprehenderit voluptate nulla dolor reprehenderit aliquip eu cupidatat."
+        }
+      ]
+    }
+]
