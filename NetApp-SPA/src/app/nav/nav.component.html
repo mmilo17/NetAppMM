@@ -29,7 +29,7 @@
     
     <span *ngIf="loggedIn()" class="ml-2">
         <a class="nav-link" [routerLink]="['/member/edit']">
-          <img src="{{authService.currentUser.photoUrl}}" alt="">
+          <img src="{{photoUrl}}" alt="">
         </a>
     </span>
 
