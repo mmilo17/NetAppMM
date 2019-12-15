@@ -16,7 +16,7 @@ namespace NetApp.API.Dtos
         [Required]
         public string Name {get; set; }
         [Required]
-        public string Surname {get; set; }
+        public string Surnname {get; set; }
         [Required]
         public DateTime DateOfBirth {get; set; }
         [Required]

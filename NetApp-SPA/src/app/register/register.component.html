@@ -26,9 +26,9 @@
   </div>
 
   <div class="form-group">
-    <input [ngClass]="{'is-invalid': registerForm.get('surname').errors && registerForm.get('surname').touched}" class="form-control"
-      placeholder="Surname" formControlName="surname">
-    <div class="invalid-feedback" *ngIf="registerForm.get('surname').touched && registerForm.get('surname').hasError('required')">Surname is required</div>
+    <input [ngClass]="{'is-invalid': registerForm.get('surnname').errors && registerForm.get('surnname').touched}" class="form-control"
+      placeholder="Surname" formControlName="surnname">
+    <div class="invalid-feedback" *ngIf="registerForm.get('surnname').touched && registerForm.get('surnname').hasError('required')">Surname is required</div>
   </div>
 
   <div class="form-group">
