@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetApp.API.Data;
 using NetApp.API.Dtos;
+using NetApp.API.Helpers;
 
 namespace NetApp.API.Controllers
 {
+    [ServiceFilter(typeof(LoginUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]

@@ -57,6 +57,7 @@ namespace NetApp.API
                         ValidateAudience = false
                     };
                 });
+            services.AddScoped<LoginUserActivity>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
