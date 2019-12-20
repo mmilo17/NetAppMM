@@ -20,5 +20,7 @@ namespace NetApp.API.Helpers
         public int MaxAge { get; set; } = 99;
 
         public string OrderBy { get; set; }
+        public bool Recivers { get; set; } = false;
+        public bool Senders { get; set; } = false;
     }
 }

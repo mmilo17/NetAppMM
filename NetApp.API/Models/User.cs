@@ -32,5 +32,10 @@ namespace NetApp.API.Models
         public string Country { get; set; }
 
         public ICollection<Photo> Photos { get; set; }
+        
+        public ICollection<Request> Senders { get; set; } //Likers
+        
+        public ICollection<Request> Recivers { get; set; } //Likees
+
     }
 }

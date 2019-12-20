@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using NetApp.API.Data;
 using NetApp.API.Dtos;
 using NetApp.API.Helpers;
+using NetApp.API.Models;
 
 namespace NetApp.API.Controllers
 {
@@ -74,6 +75,34 @@ namespace NetApp.API.Controllers
                 return NoContent();
 
             throw new Exception($"Updating user {id} failed on save");
+        }
+
+        [HttpPost("{id}/Request/{recipientId}")]
+        public async Task<IActionResult> RequestUser(int id, int recipientId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var request = await _repo.GetRequest(id, recipientId);
+
+            if (request != null)
+                return BadRequest("You already send request to this user");   
+
+            if (await _repo.GetUser(recipientId) == null)
+                return NotFound();    
+
+            request = new Request
+            {
+                SenderId = id,
+                ReceiverId = recipientId
+            };
+
+            _repo.Add<Request>(request);
+
+            if (await _repo.SaveAll())
+                return Ok();   
+
+            return BadRequest("Failed to Send friend request");     
         }
     }
 }

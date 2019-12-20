@@ -37,6 +37,11 @@ namespace NetApp.API.Data
             return photo;
         }
 
+        public async Task<Request> GetRequest(int userId, int recipientId)
+        {
+            return await _context.Requests.FirstOrDefaultAsync(u => u.SenderId == userId && u.ReceiverId == recipientId);
+        }
+
         public async Task<User> GetUser(int id)
         {
             var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
@@ -51,7 +56,19 @@ namespace NetApp.API.Data
             users = users.Where(u => u.Id != userParams.UserId);
 
             users = users.Where(u => u.Gender != userParams.Gender);
+            
+            if (userParams.Senders)
+            {
+                var userSenders = await GetUserRequests(userParams.UserId, userParams.Senders);
+                users = users.Where(u => userSenders.Contains(u.Id));
+            }
 
+            if (userParams.Recivers)
+            {
+                var userRecivers = await GetUserRequests(userParams.UserId, userParams.Senders);
+                users = users.Where(u => userRecivers.Contains(u.Id));
+            }
+            
             if (userParams.MinAge != 1 || userParams.MaxAge != 99)
             {
                 var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
@@ -74,6 +91,23 @@ namespace NetApp.API.Data
             }
 
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
+        }
+
+        private async Task<IEnumerable<int>> GetUserRequests(int id, bool senders)
+        {
+            var user = await _context.Users
+                .Include(x => x.Senders)
+                .Include(x => x.Recivers)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (senders) 
+            {
+                return user.Senders.Where(u => u.ReceiverId == id).Select(i => i.SenderId);
+            }
+            else
+            {
+                return user.Recivers.Where(u => u.SenderId == id).Select(i => i.ReceiverId);
+            }   
         }
 
         public async Task<bool> SaveAll()
