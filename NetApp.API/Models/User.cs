@@ -37,5 +37,9 @@ namespace NetApp.API.Models
         
         public ICollection<Request> Recivers { get; set; } //Likees
 
+        public ICollection<Message> MessagesSent { get; set; }
+        
+        public ICollection<Message> MessagesReceived { get; set; }
+
     }
 }

@@ -10,7 +10,7 @@ namespace NetApp.API.Data
     	public DbSet<User> Users {get; set; }
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Request> Requests { get; set; }
-
+        public DbSet<Message> Messages { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Request>().HasKey(k => new {k.SenderId, k.ReceiverId});
@@ -26,6 +26,16 @@ namespace NetApp.API.Data
                 .WithMany(u => u.Recivers)
                 .HasForeignKey(u => u.SenderId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Message>()
+                .HasOne(u => u.MessageSender)
+                .WithMany(u => u.MessagesSent)
+                .OnDelete(DeleteBehavior.Restrict);   
+
+            builder.Entity<Message>()
+                .HasOne(u => u.MessageRecipient)
+                .WithMany(u => u.MessagesReceived)
+                .OnDelete(DeleteBehavior.Restrict);     
         }
     }
 }

@@ -24,6 +24,10 @@ namespace NetApp.API.Helpers
             CreateMap<Photo, PhotoForReturnDto>();
             CreateMap<PhotoForCreationDto, Photo>();
             CreateMap<UserForRegisterDto, User>();
+            CreateMap<MessageForCreationDto, Message>().ReverseMap();
+            CreateMap<Message, MessageToReturnDto>()
+                .ForMember(m => m.MessageSenderPhotoUrl, opt => opt.MapFrom(u => u.MessageSender.Photos.FirstOrDefault(p => p.IsMain).Url))
+                .ForMember(m => m.MessageRecipientPhotoUrl, opt => opt.MapFrom(u => u.MessageRecipient.Photos.FirstOrDefault(p => p.IsMain).Url));
         }
     }
 }
