@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <input type="text"
-    [ngClass]="{'is-invalid': registerForm.get('username').error && registerForm.get('username').touched}"
+    [ngClass]="{'is-invalid': registerForm.get('username').errors && registerForm.get('username').touched}"
     class="form-control" formControlName="username" placeholder="Username">
     <div class="invalid-feedback">Please choose a username with lower case</div>
   </div>

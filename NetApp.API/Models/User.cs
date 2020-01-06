@@ -31,15 +31,15 @@ namespace NetApp.API.Models
 
         public string Country { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
+        public virtual ICollection<Photo> Photos { get; set; }
         
-        public ICollection<Request> Senders { get; set; } //Likers
+        public virtual ICollection<Request> Senders { get; set; } //Likers
         
-        public ICollection<Request> Recivers { get; set; } //Likees
+        public virtual ICollection<Request> Recivers { get; set; } //Likees
 
-        public ICollection<Message> MessagesSent { get; set; }
+        public virtual ICollection<Message> MessagesSent { get; set; }
         
-        public ICollection<Message> MessagesReceived { get; set; }
+        public virtual ICollection<Message> MessagesReceived { get; set; }
 
     }
 }

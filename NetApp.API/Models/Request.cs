@@ -4,8 +4,8 @@ namespace NetApp.API.Models
     {
         public int SenderId { get; set; }//LikerId
         public int ReceiverId { get; set; }//LikeeId
-        public User Sender { get; set; }//Liker
-        public User Receiver { get; set; }//Likee
+        public virtual User Sender { get; set; }//Liker
+        public virtual User Receiver { get; set; }//Likee
 
     }
 }

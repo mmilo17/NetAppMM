@@ -6,9 +6,9 @@ namespace NetApp.API.Models
     {
         public int Id { get; set; }
         public int MessageSenderId { get; set; }
-        public User MessageSender { get; set; }
+        public virtual User MessageSender { get; set; }
         public int MessageRecipientId { get; set; }
-        public User MessageRecipient { get; set; }
+        public virtual User MessageRecipient { get; set; }
         public string Content { get; set; }
         public bool IsRead { get; set; }
         public DateTime? DateRead { get; set; }
