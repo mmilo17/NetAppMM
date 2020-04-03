@@ -10,6 +10,7 @@
     border: 1px solid rgba(39, 103, 155, 0.239);
     padding: 10px;
     border-radius: 4px;
+    font-size: large;
   }
   
   .nav-tabs > li.open, .member-tabset > .nav-tabs > li:hover {
@@ -37,7 +38,7 @@
   
   .member-tabset > .nav-tabs > li.active > a {
     border: 0 !important;
-    color: #d2f4fa;
+    color: black;
   }
   
   .member-tabset > .nav-tabs > li.active > a > i {

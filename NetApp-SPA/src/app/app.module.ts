@@ -34,6 +34,7 @@ import { TimeAgoPipe } from 'time-ago-pipe';
 import { ListResolver } from './_resolvers/list.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 export function tokenGetter() {
@@ -48,41 +49,42 @@ export class CustomHammerConfig extends HammerGestureConfig {
   }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HomeComponent,
-    RegisterComponent,
-    MemberListComponent,
-    ListsComponent,
-    MessagesComponent,
-    MemberCardComponent,
-    MemberDetailComponent,
-    MemberEditComponent,
-    PhotoEditorComponent,
-    TimeAgoPipe,
-    MemberMessagesComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BsDropdownModule.forRoot(),
-    BsDatepickerModule.forRoot(),
-    PaginationModule.forRoot(),
-    TabsModule.forRoot(),
-    ButtonsModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
-    NgxGalleryModule,
-    FileUploadModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter,
-        whitelistedDomains: ['localhost:5000'],
-        blacklistedRoutes: ['localhost:5000/api/auth']
-      }
+   declarations: [
+      AppComponent,
+      NavComponent,
+      FooterComponent,
+      HomeComponent,
+      RegisterComponent,
+      MemberListComponent,
+      ListsComponent,
+      MessagesComponent,
+      MemberCardComponent,
+      MemberDetailComponent,
+      MemberEditComponent,
+      PhotoEditorComponent,
+      TimeAgoPipe,
+      MemberMessagesComponent,
+   ],
+   imports: [
+      BrowserModule,
+      BrowserAnimationsModule,
+      HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
+      TabsModule.forRoot(),
+      ButtonsModule.forRoot(),
+      RouterModule.forRoot(appRoutes),
+      NgxGalleryModule,
+      FileUploadModule,
+      JwtModule.forRoot({
+        config: {
+          tokenGetter,
+          whitelistedDomains: ['localhost:5000'],
+          blacklistedRoutes: ['localhost:5000/api/auth']
+        }
     })
   ],
   providers: [
