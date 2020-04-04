@@ -35,7 +35,7 @@ import { ListResolver } from './_resolvers/list.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { MainPageComponent } from './mainPage/mainPage.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -54,6 +54,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       NavComponent,
       FooterComponent,
       HomeComponent,
+      MainPageComponent,
       RegisterComponent,
       MemberListComponent,
       ListsComponent,
