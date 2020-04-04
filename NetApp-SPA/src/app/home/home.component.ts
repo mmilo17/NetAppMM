@@ -18,7 +18,11 @@ export class HomeComponent implements OnInit {
     this.registerMode = true;
   }
 
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
 
+  }
   cancelRegisterMode(registerMode: boolean) {
     this.registerMode = registerMode;
   }
