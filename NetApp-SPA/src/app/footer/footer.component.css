@@ -1,22 +1,11 @@
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    height: 70px;
-    background-color: #f6e2e2;
-  }
-  footer ul.footerleft{
-      margin-left: 350px;
-  }
-  footer ul.footerleft li{
-      font-size: 17px;
-      display: inline;
-      margin-right: 25px;
-  }
-  footer a{
-
-      color: black;
-      margin: 10px; 
-  }
+    margin-top: 55px;
+    display: flex;  
+    padding: 5px;
+    color: black;
+    font-size: 18px;
+}
+a {
+    font-size: 35px;
+} 
 
